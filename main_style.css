@@ -85,3 +85,8 @@ aside{
         height: 300px;}
 
 }
+@media (max-height: 580px){
+    .banner{
+        height:360px;
+    }
+}

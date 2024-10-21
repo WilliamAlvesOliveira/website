@@ -95,7 +95,10 @@ aside{
     }
 }
 
-@media (max-height: 7500px){
+@media (max-height: 700px){
+    .noticias{
+        height: 100px;
+    }
     .banner{
         top: 200px;
     }

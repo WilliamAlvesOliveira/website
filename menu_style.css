@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
-nav{
-    /*height: 31px;*/
+.menu{
     background-color: rgb(31, 138, 205);
     position: sticky;
     top: -1px;
@@ -30,11 +29,10 @@ nav{
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
-    transition: 0.8s;
 }
 
 .buttom:hover  .opções{
-    display: block
+    display: block;
 }
 
 .opções  a:hover{

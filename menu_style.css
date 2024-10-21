@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+nav{
+    /*height: 31px;*/
+    background-color: rgb(31, 138, 205);
+    position: sticky;
+    top: -1px;
+}
+
+.menubar{
+    padding-top: 5px;
+    margin: 0px 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.buttom > a:hover{
+    border: 1px solid black;
+    border-radius: 1000px;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.opções{
+    display: none;
+    position: absolute;
+    background-color:rgb(31, 138, 205) ;
+    margin-top: 3px;
+    outline: 1px solid white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+    transition: 0.8s;
+}
+
+.buttom:hover  .opções{
+    display: block
+}
+
+.opções  a:hover{
+    background-color: rgba(0, 0, 255, 0.2);
+    border-radius: 1000px; 
+    text-decoration: under;
+}

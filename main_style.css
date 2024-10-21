@@ -80,6 +80,10 @@ aside{
         height: 556px;
     }
 
+    .noticias{
+        height:100px
+    }
+
     .banner{
         top: 140px;
         height: 300px;}
@@ -88,5 +92,11 @@ aside{
 @media (max-height: 580px){
     .banner{
         height:360px;
+    }
+}
+
+@media (max-height: 7500px){
+    .banner{
+        top: 200px;
     }
 }

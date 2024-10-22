@@ -89,9 +89,9 @@ aside{
         height: 300px;}
 
 }
-@media (max-height: 700px){
+@media (max-height: 400px){
     .banner{
-        top: 9vh;
+        top: 9%;
         height:350px;
     }
 }

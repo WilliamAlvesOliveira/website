@@ -85,13 +85,13 @@ aside{
     }
 
     .banner{
-        top: 140px;
+        top: 180px;
         height: 300px;}
 
 }
 @media (max-height: 700px){
     .banner{
-        top: 18vh;
+        top: 9vh;
         height:350px;
     }
 }

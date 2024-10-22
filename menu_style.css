@@ -4,6 +4,7 @@
     background-color: rgb(31, 138, 205);
     position: sticky;
     top: -1px;
+    z-index: 1000;
 }
 
 .menubar{

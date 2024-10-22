@@ -91,7 +91,7 @@ aside{
 }
 @media (max-height: 700px){
     .banner{
-        top: 22vh;
-        height:360px;
+        top: 18vh;
+        height:350px;
     }
 }

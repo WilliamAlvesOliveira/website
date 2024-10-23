@@ -43,7 +43,7 @@ aside{
     background-color: black;
     width: 100%;
     height: 100%;
-    filter: blur(3px);
+    filter: blur(10px);
 }
 
 .texto{
@@ -54,13 +54,14 @@ aside{
     place-items: center;
     justify-content: center;
     font-size: 50px;
-    border: 1px solid black;
+    border-radius:10px;
     width: 99%;
     height: 95%;
 }
 
 .texto > P{
     color: white;
+    text-align: center;
 }
 
 .propaganda{
@@ -75,24 +76,55 @@ aside{
     border: 1px solid black;
 }
 
-.propaganda > p{
+@media(max-width: 549px){
+    .propaganda{
+        width:280px;
+        height: 280px;
+    }
+
+
+
+    .propaganda_text{
+        font-size: 2rem;
+    }
+    
+}
+
+.propaganda_text{
     font-family: Arial, Helvetica, sans-serif;
     transform: rotate(-42deg);
-    font-size: 35px;
+    font-size: 3rem;
     font-weight: bold;
     color: yellow;
     text-shadow: 2px 2px 3px white;
     text-decoration: underline;
 }
 
+.propaganda_text:hover{
+    transform: rotate(0deg);
+    transition: 1s;
+}
+
 .barra_noticias{
     height: 700px;
     width: 100%;
+    margin-right: -2px;
     overflow-y: scroll;
 }
 
-::-webkit-scrollbar {
-    width: 0px;
+.barra_noticias::-webkit-scrollbar{
+    width: 3px; /* Largura da barra de rolagem vertical */
+    height: 100px; /* Altura da barra de rolagem horizontal */
+}
+
+.barra_noticias::-webkit-scrollbar-track {
+    background: transparent; /* Cor do trilho */
+    border-radius: 10px; /* Bordas arredondadas do trilho */
+}
+
+.barra_noticias::-webkit-scrollbar-thumb {
+    background: var(--cor1); /* Cor do polegar */
+    border-radius: 10px; /* Bordas arredondadas do polegar */
 }
 
 .noticias{
@@ -108,8 +140,15 @@ aside{
     position: sticky;
     top: 12vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1rem;
     height: 600px;
     background-color: lightyellow;
+    background-image: url(imagens/ghostband.JPG);
+    background-position: center center;
     border: 1px solid black;
 }
 
@@ -126,7 +165,10 @@ aside{
 
     .banner{
         top: 180px;
-        height: 300px;}
+        height: 300px;
+        background-image: url(imagens/minighostband.JPG);
+    }
+        
 
 }
 

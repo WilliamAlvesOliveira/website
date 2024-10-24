@@ -203,7 +203,7 @@ picture img{
 
 @media (max-height: 660px){
     .banner{
-        top: 25vh;
+        top: 12vh;
         height:320px;
     }
 }

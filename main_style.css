@@ -230,6 +230,7 @@ picture img{
     color: white;
     width: 70%;
     border-radius: 1000px;
+    text-decoration: underline;
 }
 
 .banner{
@@ -266,8 +267,6 @@ picture img{
     .noticias p{
         font-size: 1em;
         color: white;
-        background-color: transparent;
-        border: 0px;
     }
     
     .banner{

@@ -61,6 +61,7 @@ picture img{
     max-width: 100%;
     height: auto;
 }
+
 .imagem{
     position: relative;
     width: 100%;
@@ -103,6 +104,10 @@ picture img{
     height: 300px;
     background-color: rgba(111, 188, 235, 0.8);
     overflow: hidden;
+}
+
+.animated_border:hover{
+    box-shadow: 5px 5px black;
 }
 
 .animated_border:hover::before{
@@ -161,8 +166,6 @@ picture img{
     text-decoration: underline;
 }
 
-
-
 .propaganda .hidden{
     visibility: hidden;
     opacity: 0;
@@ -207,12 +210,26 @@ picture img{
 }
 
 .noticias{
+    display: flex;
+    flex-direction: column-reverse;
+    place-items: center;
     margin: 10px 0px;
     height: 200px;
     width: 100%;
     border: 1px solid black;
     border-radius: 10px;
     background-color: aquamarine;
+    background-image: url(imagens/skullheatm.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.barra_noticias p{
+    font-size: 1.3em;
+    text-align: center;
+    color: white;
+    width: 70%;
+    border-radius: 1000px;
 }
 
 .banner{
@@ -228,6 +245,7 @@ picture img{
     background-color: lightyellow;
     background-image: url(imagens/ghostband.JPG);
     background-position: center top;
+    background-size: cover;
     border: 1px solid black;
 }
 
@@ -239,9 +257,18 @@ picture img{
     }
 
     .noticias{
-        height:100px
+        justify-content: center;
+        height:100px;
+        background-image: url(imagens/skullheatp.jpg);
     }
 
+    .noticias p{
+        font-size: 1em;
+        color: white;
+        background-color: transparent;
+        border: 0px;
+    }
+    
     .banner{
         top: 180px;
         height: 300px;

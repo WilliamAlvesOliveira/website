@@ -102,7 +102,7 @@ picture img{
     justify-content: center;
     width: 300px;
     height: 300px;
-    background-color: rgba(111, 188, 235, 0.8);
+    background-color:red;
     overflow: hidden;
 }
 
@@ -222,6 +222,10 @@ picture img{
     background-image: url(imagens/skullheatm.jpg);
     background-position: center;
     background-size: cover;
+}
+
+.noticias:hover{
+    border: 2px solid white;
 }
 
 .barra_noticias p{

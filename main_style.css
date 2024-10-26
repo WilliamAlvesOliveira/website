@@ -53,6 +53,7 @@ aside{
 .matérias p{
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
+    text-indent: 30px;
     line-height: 1.3;
 }
 
@@ -107,7 +108,7 @@ picture img{
 }
 
 .animated_border:hover{
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.508);
 }
 
 .animated_border:hover::before{

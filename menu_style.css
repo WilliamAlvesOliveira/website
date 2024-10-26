@@ -8,6 +8,7 @@
 }
 
 .menubar{
+    height: 29px;
     padding-top: 5px;
     margin: 0px 15px;
     display: flex;

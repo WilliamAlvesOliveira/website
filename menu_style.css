@@ -1,10 +1,15 @@
 @charset "UTF-8";
 
 .menu{
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    justify-content: space-between;
     background-color: rgb(31, 138, 205);
     position: sticky;
     top: -1px;
     z-index: 1000;
+    height: 32px;
 }
 
 .menubar{
@@ -13,23 +18,37 @@
     margin: 0px 15px;
     display: flex;
     flex-direction: row;
+    place-items: center;
     gap: 10px;
 }
 
-.buttom > a:hover{
+.button{
+    display: block;
+    width: 200px;
+    text-align: center;
+    border: 1px solid var(--cor2);
+    border-radius: 1000px;
+}
+
+.menu p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.button >p:hover{
     border: 1px solid black;
     border-radius: 1000px;
     box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+    text-decoration: underline ;
+    cursor: pointer;
 }
 
 .opções{
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    width: 100px;
     position: absolute;
     background-color:rgb(31, 138, 205) ;
-    margin-top: 3px;
+    margin-top: 4px;
+    width: 200px;
     outline: 1px solid white;
     border: 1px solid black;
     border-radius: 10px;
@@ -43,30 +62,54 @@
 .opções a{
     display: block;
     padding: 1px 3px;
-    margin: 3px 0px;
 }
 
-.buttom:hover  .opções{
+.button:hover  .opções{
     opacity: 1;
     visibility: visible;
     transform: scale(1);
 }
 
 .opções  a:hover{
-    background-color: rgba(0, 0, 255, 0.2);
+    background-color: var(--cor3);
     border-radius: 1px; 
     text-decoration: underline;
 }
 
-@media(max-width:820px){
-    .menu a{
-        font-size: 16px;
-        padding: 1px 10px;
+@media(max-width:950px){
+    .button{
+        width: 100px;
     }
 
     .opções{
-        margin-top: 7px;
-        width: 73px;
+        width: 100px;
+    }
+}
+
+@media(max-width:600px){
+    .menu{
+        height: 22px;
+    }
+
+    .menu a{
+        font-size: 12px;
+    }
+
+    .button{
+        width: 60px;
+    }
+
+    .opções{
+        margin-top: 3px;
+        width: 60px;
+    }
+
+    .button p{
+        font-size: 12px;
+    }
+
+    .opções a{
+        font-size: 12px;
     }
 }
 

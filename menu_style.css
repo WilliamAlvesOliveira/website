@@ -3,7 +3,7 @@
 .menu{
     display: flex;
     flex-direction: row;
-    place-items: center;
+    align-items: center;
     justify-content: space-between;
     background-color: rgb(31, 138, 205);
     position: sticky;
@@ -18,7 +18,7 @@
     margin: 0px 15px;
     display: flex;
     flex-direction: row;
-    place-items: center;
+    align-items: center;
     gap: 10px;
 }
 

@@ -78,38 +78,58 @@
 
 @media(max-width:950px){
     .button{
-        width: 100px;
+        width: 80px;
+    }
+
+    .menu a, .button p, .opçoes a{
+        font-size: 16;
     }
 
     .opções{
-        width: 100px;
+        width: 80px;
+    }
+
+    .opções a{
+        font-size: 16px;
     }
 }
 
-@media(max-width:600px){
+@media(max-width:476px){
     .menu{
-        height: 22px;
+        width: 100vw;
+        height: auto;
     }
 
     .menu a{
-        font-size: 12px;
+        font-size: 3vw;
+        margin: 0;
+        padding: 0px 10px 0px 0px;
+        
+    
+    }
+
+    .menubar{
+        width: 90%;
+        margin: 0;
     }
 
     .button{
-        width: 60px;
+        width: 20vw;
     }
 
     .opções{
         margin-top: 3px;
-        width: 60px;
+        width: 20vw;
+      
     }
 
     .button p{
-        font-size: 12px;
+        font-size:4vw;
+        width: auto;
     }
 
     .opções a{
-        font-size: 12px;
+        font-size: 4vw;
     }
 }
 

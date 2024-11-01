@@ -39,6 +39,18 @@ header > h1{
     font-weight:none;
 }
 
+footer{
+    background-color: rgb(31, 138, 205);
+    text-align: center;
+    border-radius:0px 0px 20px 20px;
+    height: 20px;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
 @media(max-width: 400){
     .logo2{
         left:230px
@@ -56,13 +68,3 @@ ul{
     padding:  1px 20px;
     text-align: center;
 } 
-
-footer{
-    background-color: rgb(31, 138, 205);
-    text-align: center;
-    border-radius:0px 0px 20px 20px;
-}
-
-footer > p{
-    color:white;
-}

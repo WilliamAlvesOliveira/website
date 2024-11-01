@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 .menu{
     display: flex;
     flex-direction: row;
@@ -9,11 +7,9 @@
     position: sticky;
     top: -1px;
     z-index: 1000;
-    height: 32px;
 }
 
 .menubar{
-    height: 29px;
     padding-top: 5px;
     margin: 0px 15px;
     display: flex;
@@ -77,59 +73,28 @@
 }
 
 @media(max-width:950px){
+    .menubar{
+        margin: 0vh 2vw;
+        gap: 2vw;
+    }
+    
     .button{
-        width: 80px;
+        width: 18vw;
     }
 
     .menu a, .button p, .opçoes a{
-        font-size: 16;
+        font-size: 2.5vw;
     }
 
     .opções{
-        width: 80px;
+        width: 18vw;
     }
 
     .opções a{
-        font-size: 16px;
+        font-size: 2.5vw;
     }
 }
 
-@media(max-width:476px){
-    .menu{
-        width: 100vw;
-        height: auto;
-    }
 
-    .menu a{
-        font-size: 3vw;
-        margin: 0;
-        padding: 0px 10px 0px 0px;
-        
-    
-    }
-
-    .menubar{
-        width: 90%;
-        margin: 0;
-    }
-
-    .button{
-        width: 20vw;
-    }
-
-    .opções{
-        margin-top: 3px;
-        width: 20vw;
-      
-    }
-
-    .button p{
-        font-size:4vw;
-        width: auto;
-    }
-
-    .opções a{
-        font-size: 4vw;
-    }
-}
+   
 

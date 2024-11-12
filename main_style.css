@@ -173,9 +173,23 @@ picture img{
     color: white;
 }
 
+.banner{
+    position: sticky;
+    top: 10vh;
+    width: 100%;
+    height: 600px;
+}
+
+.banner iframe{
+    display:block;
+    width: 100%;;
+    height:600px;
+    border-radius: 20px;
+}
+
 @media(max-width:360px){
     .propaganda_text{
-        font-size: 1.5em;
+        font-size: 1.6em;
     }
 
     .propaganda .hidden{
@@ -243,23 +257,6 @@ picture img{
     text-decoration: underline;
 }
 
-.banner{
-    position: sticky;
-    top: 9.5vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 1rem;
-    height: 600px;
-    background-color: lightyellow;
-    background-image: url(imagens/ghostband.JPG);
-    background-position: center top;
-    background-size: cover;
-    border: 1px solid black;
-}
-
 @media(max-width:820px){
     main{
         padding: 5px 5px;
@@ -281,18 +278,18 @@ picture img{
         color: white;
     }
     
-    .banner{
-        top: 180px;
-        height: 300px;
-        background-image: url(imagens/minighostband.JPG);
+    .banner iframe{
+        width: 100%;
+        height: 800px;
     }
         
 
 }
 
 @media (max-height: 660px){
-    .banner{
+    .banner iframe{
         top: 12vh;
-        height:320px;
+        height: 300px;
+        border-radius: 2px;
     }
 }

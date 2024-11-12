@@ -83,7 +83,7 @@
     }
 
     .menu a, .button p, .opçoes a{
-        font-size: 2.5vw;
+        font-size: 3.5vw;
     }
 
     .opções{
@@ -92,7 +92,7 @@
     }
 
     .opções a{
-        font-size: 2.5vw;
+        font-size: 3.5vw;
         padding:3px 0px;
     }
 }

@@ -31,6 +31,7 @@ aside{
     gap: 10px;
     justify-content: center;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .matérias h2{
@@ -107,6 +108,7 @@ picture img{
     max-height: 300px;
     background-color:red;
     overflow: hidden;
+    margin-bottom: 50px;
 }
 
 .animated_border:hover{
@@ -169,6 +171,7 @@ picture img{
     position: sticky;
     top: 10vh;
     width: 100%;
+    margin: 0px 0px;
 }
 
 .banner iframe{
@@ -283,5 +286,11 @@ picture img{
 @media(max-width:450px){
     .banner iframe{
         max-height:300px ;
+    }
+}
+
+@media(max-height:450px){
+    .banner{
+        top:12vh
     }
 }

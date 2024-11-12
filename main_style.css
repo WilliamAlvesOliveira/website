@@ -35,12 +35,13 @@ aside{
 }
 
 .matérias h2{
-    font-size: 2.2em;
+    font-size: 2em;
     text-align: center;
 }
 
 .matérias h3{
-    font-size: 1.7em;
+    font-size: 1.5em;
+    text-align: center;
 }
 
 .matérias p{
@@ -292,5 +293,15 @@ picture img{
 @media(max-height:450px){
     .banner{
         top:12vh
+    }
+}
+
+@media(max-width:320px){
+    .matérias h2{
+        font-size: 1.7em;
+    }
+
+    .matérias h3{
+        font-size: 1.2em;
     }
 }

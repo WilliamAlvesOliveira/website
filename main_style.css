@@ -24,19 +24,6 @@ aside{
     width: 25%;
 }
 
-.matéria{
-    display:flex;
-    flex-direction:column;
-    place-items:space;
-    justify-content: center;
-    gap: 3px;
-    height: 300px;
-    width: 100%;
-    background-color: blue;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-
 .matérias{
     display:flex;
     flex-direction:column;
@@ -49,6 +36,10 @@ aside{
 .matérias h2{
     font-size: 2.2em;
     text-align: center;
+}
+
+.matérias h3{
+    font-size: 1.7em;
 }
 
 .matérias p{
@@ -100,7 +91,7 @@ picture img{
 
 .imagem_blur > img{
     max-width: 250px;
-    width: 65vw;
+    width: 62vw;
 
 }
 
@@ -177,13 +168,13 @@ picture img{
     position: sticky;
     top: 10vh;
     width: 100%;
-    height: 600px;
 }
 
 .banner iframe{
     display:block;
     width: 100%;;
-    height:600px;
+    max-height:600px;
+    height: 85vh;
     border-radius: 20px;
 }
 
@@ -277,19 +268,19 @@ picture img{
         font-size: 1em;
         color: white;
     }
+
+    .banner{
+        top:20vh
+    }
     
     .banner iframe{
         width: 100%;
-        height: 800px;
+        max-height: 500px;
     }
-        
-
 }
 
-@media (max-height: 660px){
+@media(max-width:450px){
     .banner iframe{
-        top: 2vh;
-        height: 89vh;
-        border-radius: 2px;
+        max-height:300px ;
     }
 }

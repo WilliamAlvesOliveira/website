@@ -11,7 +11,7 @@
 
 .menubar{
     padding-top: 5px;
-    margin: 0px 15px;
+    margin: 1px 15px;
     display: flex;
     flex-direction: row;
     align-items: center;

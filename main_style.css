@@ -113,7 +113,7 @@ picture img{
 }
 
 .animated_border:hover{
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.508);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.508);
 }
 
 .animated_border:hover::before{

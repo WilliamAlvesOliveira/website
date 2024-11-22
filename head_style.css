@@ -51,9 +51,9 @@ footer a{
     text-decoration: none;
 }
 
-@media(max-width: 400){
+@media(max-width: 400px){
     .logo2{
-        left:230px
+        left:240px
     }
 }
 

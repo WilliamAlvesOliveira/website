@@ -9,9 +9,71 @@
 :root{
     --cor1: rgb(31, 138, 205);
     --cor2:rgba(111, 188, 235, 0.6);
-    --cor3:rgba(40, 40, 251, 0.2)
+    --cor3:rgba(40, 40, 251, 0.2);
+    --cor4: rgb(75, 43, 106);
 }
 
-body{
+body,html{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    place-content: center;
+    align-items: center;
     background-color: var(--cor2);
+}
+
+#login{
+    display: flex;
+    align-items: center;
+    width: 60vw;
+    height: 60vh;
+    background-color: var(--cor1);
+    border: 3px solid var(--cor4);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#login-aside{
+    align-content: center;
+    width:35%;
+    height: 100%;
+    border-right: 3px solid var(--cor4);
+}
+
+#formulario{
+    align-content: center;
+    justify-items: center;
+    gap: 3px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.838);   
+}
+
+#user{
+    align-content: center;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    border: 1px solid var(--cor4);
+    border-radius: 50%;
+}
+
+#formulario span{
+    display: block;
+    font-size: 150px;
+    background-color: var(--cor1);
+    border-radius: 50%;
+}
+
+#formulario img{
+    display: none;
+    width: 150px;
+    height: 150px;
+    border: 1px solid var(--cor4);
+    border-radius: 50%;
+}
+
+.dados input{
+    display: block;
+    margin-bottom: 8px;
 }

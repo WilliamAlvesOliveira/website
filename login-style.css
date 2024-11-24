@@ -22,10 +22,27 @@ body,html{
     background-color: var(--cor2);
 }
 
+#login{
+    display: flex;
+    align-items: center;
+    width: 60vw;
+    max-width: 900px;
+    min-width: 200px;
+    height: 450px;
+    background-color: var(--cor1);
+    border: 3px solid var(--cor4);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#login-aside{
+    align-content: center;
+    width:35%;
+    height: 100%;
+    border-right: 3px solid var(--cor4);
+}
+
 h1{
-    display: absolute;
-    flex-direction: row;
-    place-items: center;
     padding-left: 10px;
 }
 
@@ -49,24 +66,6 @@ h1 > p{
     color: white;
     font-size:1.7vw;
     font-weight:none;
-}
-
-#login{
-    display: flex;
-    align-items: center;
-    width: 60vw;
-    height: 60vh;
-    background-color: var(--cor1);
-    border: 3px solid var(--cor4);
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-#login-aside{
-    align-content: center;
-    width:35%;
-    height: 100%;
-    border-right: 3px solid var(--cor4);
 }
 
 #formulario{
@@ -109,34 +108,72 @@ h1 > p{
     margin-bottom: 8px;
 }
 
-    @media screen and (max-width:600px){
-        #login{
-            flex-direction: column;
-            min-width: 200px;
-        }
+.botoes-form{
+    text-align: center;
+}
 
-        #login-aside{
-            width: 100%;
-            height: auto;
-            border-right:none;
-            border-bottom: 2px solid var(--cor4);
-        }
+form > .botoes-form >input{
+    background-color: var(--cor1);
+    padding: 1px 8px;
+    border-radius: 1000px;
+    color:white;
+    font-size: 1em;
+    cursor: pointer;
+}
 
-        #login-aside h1{
-            padding: 5px 0px 0px 15px;
-        }
+form > .botoes-form > input:hover{
+    background-color: var(--cor2);
+    color: var(--cor4);
+    box-shadow: 3px 3px 5px rgb(0,0,0,0.4);
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
 
-        #login-aside > h1 > p{
-            transform: translateY(0px);
-        }
-
-        .logo1{
-            font-size: 13vw;
-        }
-
-        .logo2{
-            font-size: 6vw;
-            top:-2px;
-            left: -1vw;
-        }
+@media screen and (max-width:600px){
+    #login{
+        flex-direction: column;
     }
+
+    #login-aside{
+        width: 100%;
+        height: auto;
+        border-right:none;
+        border-bottom: 2px solid var(--cor4);
+    }
+
+    #login-aside h1{
+        padding: 5px 0px 0px 15px;
+    }
+
+    #login-aside > h1 > p{
+        transform: translateY(0px);
+    }
+
+    .logo1{
+        font-size: 1.7em;
+    
+    }
+
+    .logo2{
+        font-size: 0.7em;
+        top:-2px;
+        left: -5px;
+    }
+}
+
+@media screen and (max-height:450px){
+    #login{
+        height: 100vh;
+    }
+}
+
+@media screen and (max-height: 340px) {
+    #user{
+        width:65px;
+        height:65px;
+    }
+
+    #user span{
+        font-size: 65px;
+    }
+}

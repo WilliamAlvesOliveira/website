@@ -33,7 +33,7 @@ body,html{
     background-color: var(--cor1);
     border: 3px solid var(--cor4);
     border-radius: 30px;
-    overflow: hidden;
+    overflow: hidden;;
 }
 
 #login-aside{
@@ -185,11 +185,11 @@ footer a:hover{
     }
 
     #login{
-        height: 100vh;
+        height: 90vh;
     }
 }
 
-@media screen and (max-height: 340px) {
+@media screen and (max-height: 360px) {
     #user{
         width:65px;
         height:65px;

@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="botoes-form">
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Login"onclick="logon(event)">
                     <input type="reset" value="Limpar">
                 </div>
             </form>
@@ -47,5 +47,20 @@
             arrow_back
         </span>Voltar
     </a></footer>
+
+    <script> 
+        function logon(event){ 
+            event.preventDefault(); 
+            window.alert('Logado');
+
+            var ico = document.querySelector("material-symbols-outlined")
+            var foto = document.getElementsByTagName('img')
+
+            var spanElement = document.querySelector('.material-symbols-outlined'); 
+            var imgElement = document.querySelector('#user img'); 
+            spanElement.style.display = 'none'; 
+            imgElement.style.display = 'block';
+        }
+    </script>
 </body>
 </html>

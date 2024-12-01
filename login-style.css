@@ -195,7 +195,7 @@ footer a:hover{
         height:65px;
     }
 
-    #user span{
+    #user span, img{
         font-size: 65px;
     }
 }

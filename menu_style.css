@@ -46,7 +46,7 @@
     background-color:rgb(31, 138, 205) ;
     margin-top: 4px;
     width: 200px;
-    max-height: 85vh;
+    max-height:80vh;
     overflow-y: scroll;
     outline: 1px solid white;
     border: 1px solid black;
@@ -97,7 +97,7 @@
     }
 
     .opções a{
-        font-size: 2.5vw;
+        font-size: 3.5vw;
         padding:3px 0px;
     }
 }

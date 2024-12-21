@@ -59,6 +59,8 @@
 .opções a{
     display: block;
     padding: 1px 3px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
 }
 
 .button:hover  .opções{
@@ -84,16 +86,16 @@
     }
 
     .menu a, .button p, .opçoes a{
-        font-size: 3.5vw;
+        font-size: 3.5vw ;
+        
     }
 
     .opções{
         width: 18vw;
-    
     }
 
     .opções a{
-        font-size: 3.5vw;
+        font-size: 2.5vw;
         padding:3px 0px;
     }
 }

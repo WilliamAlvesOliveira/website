@@ -18,12 +18,25 @@
 
     <nav class="menu">
         <ul class="menubar">
+
+            <li class="button">
+                <p>Matérias</p>
+                <ul class="opções">
+                    <li><a href="#Arte Urbana">Arte Urbana</a></li>
+                    <li><a href="#Acessibilidade das IAs no Brasil">Acessibilidade das IAs no Brasil</a></li>
+                    <li><a href="#A Revolução das Cidades Inteligentes">A Revolução das Cidades Inteligentes</a></li>
+                    <li><a href="#Os Benefícios do Esporte para a Saúde Mental e Física">Os Benefícios do Esporte para a Saúde Mental e Física</a></li>
+                    <li><a href="#A Importância da Sustentabilidade e do Meio Ambiente">A Importância da Sustentabilidade e do Meio Ambiente</a></li>
+                </ul>
+            </li>
+
             <li class="button">
                 <p>William</p>
                 <ul class="opções">
-                    <li><a href="https://www.facebook.com/william.ramone.1?locale=pt_BR" target="_blank">Facebook</a></li>
-                    <li><a href="https://www.instagram.com/27will_ramones/" target="_blank">Instagram</a></li>    
                     <li><a href="https://github.com/WilliamAlvesOliveira" target="_blank">Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/william-oliveira-a047a7268/" target="_blank">Linkedin</a></li>
+                    <li><a href="https://www.facebook.com/william.ramone.1?locale=pt_BR" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/27will_ramones/" target="_blank">Instagram</a></li> 
                 </ul>
             </li>
 
@@ -39,17 +52,6 @@
 
                     <li><a href="https://williamalvesoliveira.github.io/projeto-login/" target="_blank">Projeto-Login</a>
                     </li>
-                </ul>
-            </li>
-
-            <li class="button">
-                <p>Menu 3</p>
-                <ul class="opções">
-                    <li><a href="#">Opção 1</a></li>
-                    <li><a href="#">Opção 2</a></li>
-                    <li><a href="#">Opção 3</a></li>
-                    <li><a href="#">Opção 4</a></li>
-                    <li><a href="#">Opção 5</a></li>
                 </ul>
             </li>
 
@@ -82,7 +84,7 @@
                 Placeat adipisci nulla exercitationem doloremque pariatur quia omnis esse sapiente, porro, assumenda ea illum, autem sint dignissimos nisi numquam soluta alias aspernatur ex tenetur. Illo optio soluta autem. Commodi, ipsum!</p>
             </div>
 
-            <div class="matérias">
+            <div id="Arte Urbana" class="matérias">
                 <h2>Arte Urbana</h2>
                 <picture>
                     <source media="(Max-width: 800px)" srcset="imagens/csmilstsgremastep.png">
@@ -108,7 +110,7 @@
                     <p >Caixa com Blur</p></div>
             </div>
 
-            <div class="matérias">
+            <div id="Acessibilidade das IAs no Brasil" class="matérias">
                 <h2>Acessibilidade das IAs no Brasil</h2>
 
                 <p>A inteligência artificial (IA) tem se tornado cada vez mais presente no Brasil, especialmente com a integração de ferramentas como a Meta AI no WhatsApp. Essa tecnologia promete revolucionar a maneira como os usuários interagem com o aplicativo de mensagens, oferecendo uma série de novas funcionalidades, como sugestões de destinos de viagem, recomendações de restaurantes e até a criação de imagens a partir de descrições textuais1. A Meta AI, em particular, foi desenvolvida com foco na privacidade e segurança dos usuários, garantindo que as conversas sejam criptografadas e que os dados compartilhados não sejam utilizados para fins de publicidade.</p>
@@ -129,7 +131,7 @@
                 </div>
             </div>
 
-            <div class="matérias">
+            <div id="A Revolução das Cidades Inteligentes" class="matérias">
                 <h2>A Revolução das Cidades Inteligentes</h2>
 
                 <p>Nos últimos anos, a tecnologia e a inovação têm desempenhado um papel fundamental na transformação das cidades ao redor do mundo. As chamadas "cidades inteligentes" estão emergindo como uma resposta às crescentes necessidades urbanas, combinando infraestrutura avançada com tecnologias de ponta para melhorar a qualidade de vida dos cidadãos. Esse movimento visa tornar as cidades mais eficientes, sustentáveis e habitáveis através da integração de Internet das Coisas (IoT), inteligência artificial (IA) e big data.</p>
@@ -148,7 +150,7 @@
 
             </div>
 
-            <div class="matérias">
+            <div id="Os Benefícios do Esporte para a Saúde Mental e Física" class="matérias">
                 <h2>Os Benefícios do Esporte para a Saúde Mental e Física</h2>
 
                 <p>Os esportes desempenham um papel fundamental na promoção do bem-estar físico e mental, proporcionando uma gama de benefícios que vão além da simples prática de atividade física. A prática regular de esportes ajuda a melhorar a saúde cardiovascular, fortalece os músculos e ossos, e contribui para a manutenção de um peso saudável. Além disso, a atividade física regular é essencial para a prevenção de diversas doenças crônicas, como diabetes tipo 2 e hipertensão.</p>
@@ -161,7 +163,7 @@
             </div>
 
             <div class="matérias">
-                <h2>A Importância da Sustentabilidade e do Meio Ambiente</h2>
+                <h2 id="A Importância da Sustentabilidade e do Meio Ambiente">A Importância da Sustentabilidade e do Meio Ambiente</h2>
 
                 <p>A sustentabilidade e a proteção do meio ambiente são temas cruciais para o futuro do nosso planeta. Com o crescimento populacional e a expansão das atividades industriais, os recursos naturais estão sendo explorados a um ritmo insustentável. Essa situação exige medidas urgentes para garantir que as gerações futuras possam desfrutar de um ambiente saudável e equilibrado. A adoção de práticas sustentáveis é fundamental para preservar a biodiversidade, reduzir a poluição e mitigar os efeitos das mudanças climáticas.</p>
 
@@ -246,9 +248,36 @@
     </main>
     
     <footer>
-        <a href="#  ">
+        <a href="#">
             Fim da página
         </a>
     </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+
+                if (targetId === "") {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return; 
+                }
+                
+                const targetElement = document.getElementById(targetId);
+                const offset = 50;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo(
+                    { top: offsetPosition, behavior: 'smooth'
+                }); 
+            });
+        });
+    </script>
 </body>
 </html>

@@ -31,7 +31,7 @@
                     <input type="text" name="sobrenome" id="sobrenome" placeholder="sobrenome">
 
                     <label for="email">e-mail</label>
-                    <input type="email" name="email" id="rmail" required placeholder="e-maol">
+                    <input type="email" name="email" id="email" required placeholder="e-maol">
                 </div>
 
                 <div class="botoes-form">
@@ -55,11 +55,22 @@
 
             var ico = document.querySelector("material-symbols-outlined")
             var foto = document.getElementsByTagName('img')
+            var nome = document.querySelector('#nome')
+            var in_nome = document.querySelector('#nome').value
+            var sobrenome = document.querySelector('#sobrenome')
+            var in_sobrenome = document.querySelector('#sobrenome').value
+            var mail = document.querySelector('#email')  
+            var in_mail = document.querySelector('#email') .value     
+            var botao = document.querySelector('input[type= submit]')     
 
             var spanElement = document.querySelector('.material-symbols-outlined'); 
             var imgElement = document.querySelector('#user img'); 
             spanElement.style.display = 'none'; 
             imgElement.style.display = 'block';
+            nome.value = in_nome;
+            sobrenome.value = in_sobrenome;
+            mail.value = in_mail;
+            botao.value = "logoff";            
         }
     </script>
 </body>

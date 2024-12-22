@@ -1,3 +1,10 @@
+:root{
+    --cor1: rgb(31, 138, 205);
+    --cor2:rgba(111, 188, 235, 0.6);
+    --cor3:rgba(40, 40, 251, 0.2);
+    --cor4: rgb(75, 43, 106);
+}
+
 .menu{
     display: flex;
     flex-direction: row;
@@ -27,17 +34,17 @@
 }
 
 .opções::-webkit-scrollbar{
-    width: 3px; /* Largura da barra de rolagem vertical */
-    height: 30px; /* Altura da barra de rolagem horizontal */
+    width: 5px; /* Largura da barra de rolagem vertical */
+    height: 12px; /* Altura da barra de rolagem horizontal */
 }
 
 .opções::-webkit-scrollbar-track {
     background: transparent; /* Cor do trilho */
-    border-radius: 10px; /* Bordas arredondadas do trilho */
+    border-radius: 100px; /* Bordas arredondadas do trilho */
 }
 
 .opções::-webkit-scrollbar-thumb {
-    background: var(--cor1); /* Cor do polegar */
+    background: var(--cor4); /* Cor do polegar */
     border-radius: 10px; /* Bordas arredondadas do polegar */
 }
 

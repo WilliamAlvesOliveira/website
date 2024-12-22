@@ -212,7 +212,6 @@ picture img{
 
 .barra_noticias::-webkit-scrollbar{
     width: 3px; /* Largura da barra de rolagem vertical */
-    height: 100px; /* Altura da barra de rolagem horizontal */
 }
 
 .barra_noticias::-webkit-scrollbar-track {

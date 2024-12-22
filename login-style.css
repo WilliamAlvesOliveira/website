@@ -85,6 +85,7 @@ h1 > p{
     height: 150px;
     border: 1px solid var(--cor4);
     border-radius: 50%;
+    overflow: hidden;
 }
 
 #formulario span{
@@ -98,9 +99,6 @@ h1 > p{
 #formulario img{
     display: none;
     width: 150px;
-    height: 150px;
-    border: 1px solid var(--cor4);
-    border-radius: 50%;
 }
 
 .dados input{

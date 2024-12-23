@@ -9,6 +9,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    border-left: 3px solid var(--cor4);
+    border-right: 3px solid var(--cor4);
     justify-content: space-between;
     background-color: rgb(31, 138, 205);
     position: sticky;

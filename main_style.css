@@ -217,6 +217,7 @@ picture img{
     width: 100%;
     margin-right: -2px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .barra_noticias::-webkit-scrollbar{

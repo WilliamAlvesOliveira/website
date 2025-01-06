@@ -18,6 +18,10 @@
     z-index: 1000;
 }
 
+.menu > a{
+    padding: 7px 15px 0px 0px;
+}
+
 .menubar{
     padding-top: 5px;
     margin: 1px 15px;
@@ -57,7 +61,7 @@
     border: 1px solid var(--cor1);
 }
 
-.button >p:hover{
+.button > p:hover{
     border: 1px solid black;
     border-radius: 1000px;
     box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.5);

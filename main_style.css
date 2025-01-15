@@ -200,6 +200,10 @@ picture img{
     .propaganda .hidden{
         font-size: 1em;
     }
+
+    .artigos{
+        font-size: 100%;
+    }
 }
 
 .propaganda:hover .propaganda_text{

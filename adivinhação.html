@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhação</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        body > div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        main > p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <head><h1>Adivinhe o Número</h1></head>
+
+        <main>
+            <label for="Palpite">Paçpite</label>
+            <input type="number" name="Paçpite" id="`Palpite" placeholder="de 0 até 1000">
+            <button>Dar palpite</button>
+            <p id="resultado"> Você errou meu número é maior</p>
+        </main>
+
+        <footer>
+            <button>Novo número</button>
+        </footer>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>

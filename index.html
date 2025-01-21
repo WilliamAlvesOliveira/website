@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>website</title>
+    <script src="games.js" defer> </script>
     <link rel="stylesheet" href="head_style.css">
     <link rel="stylesheet" href="menu_style.css">
     <link rel="stylesheet" href="main_style.css">
     <link rel="shortcut icon" href="imagens/Wlogo.png" type="image/x-icon">
-
+    
 </head>
 <body>
 
@@ -58,8 +59,8 @@
             <li class="button">
                 <p>Games</p>
                 <ul class="opções">
-                    <li><a href="#">Advinhação</a></li>
-                    <li><a href="#">Opção 2</a></li>
+                    <li><p onclick="openwindow()">Adivinhação</p></li>
+                    <li><a href="#">adivinhação</a></li>
                     <li><a href="#">Opção 3</a></li>
                     <li><a href="#">Opção 4</a></li>
                     <li><a href="#">Opção 5</a></li>
@@ -72,6 +73,15 @@
 
     <main>
         <section>
+            <div class="games">
+                <p>Games</p>
+                <iframe src="%" frameborder="0"></iframe>
+                <div class="gamebuttons">
+                    <button onclick="closewindow()">fechar</button>
+                    <button>reiniciar</button>
+                </div>
+            </div>
+
             <h2 class="artigos">Matérias</h2>
 
             <div class="matérias">

@@ -54,7 +54,7 @@
     border-radius: 10px; /* Bordas arredondadas do polegar */
 }
 
-.menu p{
+.button > p{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: white;
@@ -86,7 +86,12 @@
     transition-delay: 0.2s;
 }
 
-.opções a{
+.opções li > p{
+    color: white;
+    font-size: 20px;
+}
+
+.opções a,.opções li > p{
     display: block;
     padding: 1px 3px;
     overflow-x: hidden;
@@ -99,7 +104,7 @@
     transform: scale(1);
 }
 
-.opções  a:hover{
+.opções  a:hover, .opções li > p:hover{
     background-color: var(--cor3);
     border-radius: 1px; 
     text-decoration: underline;
@@ -115,7 +120,7 @@
         width: 18vw;
     }
 
-    .menu a, .button p, .opçoes a{
+    .menu a, .button > p, .opçoes a{
         font-size: 3.5vw ;
         
     }
@@ -124,7 +129,7 @@
         width: 18vw;
     }
 
-    .opções a{
+    .opções a, .opções li > p{
         font-size: 3.5vw;
         padding:3px 0px;
     }

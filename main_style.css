@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
 
 :root{
     --cor1: rgb(31, 138, 205);
@@ -31,6 +32,61 @@ aside{
     gap: 10px;
     place-items: center;
     width: 25%;
+}
+
+.games{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--cor4);
+    border-radius: 10px;
+}
+
+.games > p{
+    color: white;
+    font-size: 35px;
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+    border-bottom: 1px solid white;
+}
+
+.games > iframe{
+    margin: 5px;
+    max-height: 350px;
+    max-width: 350px;
+    width:100%;
+    height: 100%;
+}
+
+.gamebuttons{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid white;
+    width: 96%
+}
+
+.gamebuttons> button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    margin: 3px;
+    width: 100px;
+    padding: 3px;
+    border: 1px solid white;
+    border-radius: 1000px;
+    box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.43);
+}
+
+.gamebuttons> button:hover{
+    background-color: rgb(225, 0, 0);
+    cursor: pointer;
 }
 
 .matérias{

@@ -95,6 +95,7 @@
         }
 
         button:hover{
+            cursor: pointer;
             box-shadow: 3px 3px 10px rgb(56,56,56);;
             transform: translate(-2px, -2px);
         }
@@ -147,7 +148,7 @@
     </div>
 
     <script>
-        var computador = Math.floor(Math.random()*1001)
+        var computador = Math.floor(Math.random() * 1001)
         let min = 0
         let max = 1000
 
@@ -162,6 +163,7 @@
         function adivinhacao(){
             let entrada = document.getElementById('Palpite').value
             let mensagem = document.querySelector('#resultado')
+            mensagem.style.color = 'rgb(56,56,56)'
             
 
             if (entrada ===''){

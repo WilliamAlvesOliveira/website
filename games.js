@@ -1,6 +1,8 @@
-function openwindow(){
+function openwindow(game){
     let gamescreen = document.querySelector(".games");
+    let gameFrame = document.getElementById('gameFrame');
     gamescreen.style.display = "flex";
+    gameframe.src = game;
 }
 
 function closewindow(){

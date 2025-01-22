@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="menu_style.css">
     <link rel="stylesheet" href="main_style.css">
     <link rel="shortcut icon" href="imagens/Wlogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=power_settings_new" />
     
 </head>
 <body>
@@ -59,8 +60,7 @@
             <li class="button">
                 <p>Games</p>
                 <ul class="opções">
-                    <li><p onclick="openwindow()">Adivinhação</p></li>
-                    <li><a href="#">adivinhação</a></li>
+                    <li><a href="#gamescreen" onclick="openwindow('adivinhação.html')">Adivinhação</a></li>
                     <li><a href="#">Opção 3</a></li>
                     <li><a href="#">Opção 4</a></li>
                     <li><a href="#">Opção 5</a></li>
@@ -73,12 +73,15 @@
 
     <main>
         <section>
-            <div class="games">
+            <div class="games" id="gamescreen">
                 <p>Games</p>
-                <iframe src="%" frameborder="0"></iframe>
+                <iframe id="gameframe" src="" frameborder="0"></iframe>
                 <div class="gamebuttons">
-                    <button onclick="closewindow()">fechar</button>
-                    <button>reiniciar</button>
+                    <button onclick="closewindow()">
+                        <span class="material-symbols-outlined">
+                        power_settings_new
+                        </span>fechar
+                    </button>
                 </div>
             </div>
 
@@ -296,7 +299,7 @@
                 }
                 
                 const targetElement = document.getElementById(targetId);
-                const offset = 50;
+                const offset = 37;
                 const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                 const offsetPosition = elementPosition - offset;
 

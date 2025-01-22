@@ -35,12 +35,12 @@ aside{
 }
 
 .games{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 400px;
+    height: 450px;
     background-color: rgba(0, 0, 0, 0.7);
     border: 2px solid var(--cor4);
     border-radius: 10px;
@@ -64,23 +64,29 @@ aside{
 }
 
 .gamebuttons{
+    display: flex;
+    justify-content: center;
     border-top: 1px solid white;
-    text-align: center;
     width: 96%
 }
 
 .gamebuttons> button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
     margin: 3px;
-    width: 70px;
-    padding: 5px;
-    border: 1px solid var(--cor4);
+    width: 100px;
+    padding: 3px;
+    border: 1px solid white;
     border-radius: 1000px;
+    box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.43);
 }
 
 .gamebuttons> button:hover{
-    margin: 1px;
-    transform: translate(-2px, -2px);
-    width: 74px;
+    background-color: rgb(225, 0, 0);
+    cursor: pointer;
 }
 
 .matérias{

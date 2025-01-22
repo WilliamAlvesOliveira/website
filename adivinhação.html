@@ -17,7 +17,7 @@
 
         body{
             display: flex;
-            background-color: rgb(58, 58, 216);
+            background-color: rgb(56,56,56);;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -29,12 +29,12 @@
             justify-content: space-between;
             align-items: center;
             gap: 2px;
-            background-color: white;
+            background-image: linear-gradient(to bottom, #8f8f8f,#d8d8d8,#8f8f8f);
             max-width: 400px;
             max-height: 400px;
             width: 100%;
             height: auto;
-            border: 3px solid black;
+            border: 3px solid rgb(56,56,56);
             border-radius: 20px;
             padding: 5px;
             margin: 3px;
@@ -43,14 +43,17 @@
         h1{
             text-align: center;
             font-size: 10vw;
+            color: rgb(56,56,56);
             text-decoration: underline;
         }
 
         label{
             font-size: 8vw;
+            color: rgv(56,56,56);
         }
 
         input{
+            background-color: rgba(255, 255, 255, 0.5);
             max-width: 250px;
             width: 90%;
         }
@@ -59,27 +62,39 @@
             display: flex;
             flex-direction: column;
             width: 100%;
+            justify-items: space-around;
             align-items: center;
             gap: 2vw;
         }
 
-        main > p{
+        main > div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             height: 25vh;
+            width: 100%;
+            border-radius: 1px solid rgb(56,56,56);
+        }
+
+        main > div >  p{
             text-align: center;
-            font-size: 9vw;
+            font-size: 7vw;
             font-family: Arial, Helvetica, sans-serif;
+            color: rgb(56,56,56);
         }
 
         button{
-            background-color: rgb(206, 207, 208);
+            background-image: linear-gradient(#d8d8d8c0,#8f8f8fc0);
             border: 2px solid black;
             border-radius: 1000px;
+            box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.4);
             width: 32vw;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 4.5vw;
+            color: rgb(56, 56, 56);
         }
         button:hover{
-            box-shadow: 3px 3px 10px black;
+            box-shadow: 3px 3px 10px rgb(56,56,56);;
             transform: translate(-2px, -2px);
         }
 
@@ -101,7 +116,6 @@
             }
 
             main > p{
-                height: 50px;
                 font-size: 24px;
             }
 
@@ -120,7 +134,9 @@
             <label for="Palpite">Palpite:</label>
             <input type="number" name="Palpite" id="Palpite">
             <button onclick="adivinhacao()">Dar palpite</button>
-            <p id="resultado"> </p>
+            <div>
+                <p id="resultado"> </p>
+            </div>
         </main>
 
         <footer>
@@ -133,7 +149,7 @@
         let min = 0
         let max = 1000
 
-        document.querySelector("#Palpite").placeholder = `de ${min} até ${max}`
+        document.querySelector("#Palpite").placeholder = ` de ${min} até ${max}`
         document.querySelector("#Palpite").addEventListener('keyup', function(event) {
             if (event.key === 'Enter') {
                 adivinhacao();
@@ -169,7 +185,7 @@
                     }
                 }
 
-                document.querySelector("#Palpite").placeholder = `de ${min} até ${max}`
+                document.querySelector("#Palpite").placeholder = ` de ${min} até ${max}`
                 document.getElementById('Palpite').value = ''
                 document.getElementById('Palpite').focus()
             }

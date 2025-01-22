@@ -93,6 +93,7 @@
             font-size: 4.5vw;
             color: rgb(56, 56, 56);
         }
+
         button:hover{
             box-shadow: 3px 3px 10px rgb(56,56,56);;
             transform: translate(-2px, -2px);
@@ -115,7 +116,7 @@
                 gap: 10px;
             }
 
-            main > p{
+            main > div > p{
                 font-size: 24px;
             }
 
@@ -124,6 +125,7 @@
                 font-size: 20px;
             }
         }
+        
     </style>
 </head>
 <body>
@@ -132,7 +134,7 @@
 
         <main>
             <label for="Palpite">Palpite:</label>
-            <input type="number" name="Palpite" id="Palpite">
+            <input type="number" name="Palpite" id="Palpite" min="0" max="1000">
             <button onclick="adivinhacao()">Dar palpite</button>
             <div>
                 <p id="resultado"> </p>

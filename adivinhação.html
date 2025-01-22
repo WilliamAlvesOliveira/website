@@ -143,7 +143,7 @@
         </main>
 
         <footer>
-            <button onclick="novojogo()">Novo número</button>
+            <button onclick="reloadPage()">Novo número</button>
         </footer>
     </div>
 
@@ -176,7 +176,6 @@
                     mensagem.innerHTML = 'PARABÉNS! Você acertou.'
                     min = 0
                     max = 1000
-                    novojogo()
                 }else if (computador > numero){
                     mensagem.innerHTML = 'Você errou! Meu número é <strong>maior</strong>.'
                     if (min < numero){
@@ -197,6 +196,10 @@
 
         function novojogo(){
             computador = Math.floor(Math.random() * 1001)
+        }
+
+        function reloadPage(){
+            location.reload();
         }
     </script>
 </body>

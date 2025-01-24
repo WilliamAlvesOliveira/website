@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <style>
+        :root{
+            --cor1: rgb(31, 138, 205);
+            --cor2:rgba(111, 188, 235, 0.6);
+            --cor3:rgba(40, 40, 251, 0.2);
+            --cor4: rgb(75, 43, 106);
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            background-color: var(--cor1);
+        }
+
+        body{
+            background-color: var(--cor2);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        h1{
+            color: var(--cor4);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        .players{
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .players > p{
+            font-size: 14px;
+            width: 120px;
+            height: 40px;
+            border-radius: 1000px;
+            padding: 3px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .jogadorAtual{
+            background-color: red;
+            border: 2px solid white;
+            outline: 1px solid red;
+            color: white;
+        }
+
+        .velha{
+            padding: 3px;
+            border-collapse: collapse;
+        }
+
+        @media screen and (orientation: portrait){
+            .velha{
+                margin: auto;
+                width: 50vw;
+                height: 50vw;
+            }
+        }
+
+        @media screen and (orientation: landscape){
+            .velha{
+                margin: auto;
+                width: 60vh;
+                height: 60vh;
+            }
+        }
+
+        td{
+            width: 30%;
+            height: 30%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            color: white;
+        }
+
+
+        .cima > td, .meio > td{
+            border-bottom: 3px solid var(--cor4);
+        }
+
+        .esquerda{
+            border-right: 3px solid var(--cor4);
+        }
+
+        .direita{
+            border-left: 3px solid var(--cor4);
+        }
+        
+        #resultado{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: white;
+            height: 30px;
+            margin-top: 3px;
+        }
+
+        .vencedor{
+            background-color: red;
+            border-top: 3px solid white;
+            border-bottom: 3px solid white;
+            outline: 1px solid red;
+        }
+
+        .jogadorAtual, .vencedor{
+            transition: background-color 0.05s ease, border-top 0.05s ease, border-bottom 0.05s ease, outline 0.05s ease;
+        }
+
+        .cursorX {
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgMUwxOSAxOU0xOSAxTDEgMTkiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4='), auto;
+        }
+
+        .cursorO {
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg=='), auto;
+        }
+
+        footer > button{
+            cursor: pointer;
+            background-color: var(--cor4);
+            color: white;
+            padding: 3px 8px;
+            border: 2px solid var(--cor4);
+            border-radius: 1000px;
+            box-shadow: inset -3px -3px 4px rgba(0, 0, 0, 0.381);
+        }
+
+        footer > button:hover{
+            border: 2px solid white
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jogo da Velha</h1>
+    </header>
+
+    <main>
+        <div class="players">
+            <p id="playerX" >Player <br>X</p>
+            <p id="playerO">Player <br>O</p>
+        </div>
+        <div>
+            <table class="velha">
+                <tr class="cima">
+                    <td class="esquerda"  id="a1" tabindex="0" role="button" aria-label="Campo A1">
+                    </td>
+
+                    <td class="centro" id="a2" tabindex="0" role="button" aria-label="Campo A2">
+                    </td>
+
+                    <td class="direita" id="a3" tabindex="0" role="button" aria-label="Campo A3">
+                    </td>
+                </tr>
+
+                <tr class="meio">
+                    <td class="esquerda" id="b1" tabindex="0" role="button" aria-label="Campo B1">
+                    </td>
+
+                    <td class="centro" id="b2" tabindex="0" role="button" aria-label="Campo B2">
+                    </td>
+
+                    <td class="direita" id="b3" tabindex="0" role="button" aria-label="Campo B3">
+                    </td>
+                </tr>
+
+                <tr class="baixo">
+                    <td class="esquerda" id="c1" tabindex="0" role="button" aria-label="Campo C1">
+                    </td>
+
+                    <td class="centro" id="c2" tabindex="0" role="button" aria-label="Campo C2"> 
+                    </td>
+
+                    <td class="direita" id="c3" tabindex="0" role="button" aria-label="Campo C3"> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="resultado"> </div>
+    </main>
+
+    <footer>
+        <button id="reiniciar">Reiniciar</button>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', iniciar);
+        let jogador = 'X';
+    
+        function jogadorAtual(jogador){
+            const jogadorX = document.querySelector('#playerX');
+            const jogadorO = document.querySelector('#playerO');
+    
+            if (jogador === 'X'){
+                jogadorX.classList.add('jogadorAtual');
+                jogadorO.classList.remove('jogadorAtual');
+            }else{
+                jogadorX.classList.remove('jogadorAtual');
+                jogadorO.classList.add('jogadorAtual');
+            }
+        }
+    
+        function iniciar() {
+            const celulas = document.querySelectorAll('.velha td');
+            celulas.forEach(celula => {
+                celula.addEventListener('click', () => marcar(celula));
+                celula.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        marcar(celula);
+                    }
+                });
+            });
+    
+            document.querySelector('#reiniciar').addEventListener('click', reiniciar);
+            reiniciar();
+        }
+    
+        function marcar(celula) {
+            if (celula.innerHTML === '') {
+                celula.innerHTML = jogador;
+    
+                const vencedor = verificarVencedor();
+                const resultado = document.querySelector('#resultado');
+    
+                if (vencedor) {
+                    if (vencedor === 'velha'){
+                        resultado.innerText = 'VELHA!!!';
+                        resultado.classList.add('vencedor');
+                    }else{
+                        resultado.innerText = `Vencedor: Jogador ${vencedor}`;
+                        resultado.classList.add('vencedor');
+                        return; 
+                    } 
+                }
+    
+                jogador = jogador === 'X' ? 'O' : 'X';
+                document.body.classList.toggle('cursorX');
+                document.body.classList.toggle('cursorO');
+                jogadorAtual(jogador)
+            }
+        }
+    
+        function verificarVencedor() {
+            const celulas = document.querySelectorAll('.velha td');
+            const combinacoes = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+    
+            for (const combinacao of combinacoes) {
+                const [a, b, c] = combinacao;
+                if (celulas[a].innerHTML && celulas[a].innerHTML === celulas[b].innerHTML && celulas[a].innerHTML === celulas[c].innerHTML) {
+                    return celulas[a].innerHTML;
+                }
+            }
+    
+            const todosPreenchidos = [...celulas].every(celula => celula.innerHTML !== '');
+            if (todosPreenchidos) {
+                return 'velha';
+            }
+    
+            return null;
+        }
+    
+        function reiniciar() {
+            const celulas = document.querySelectorAll('.velha td');
+            celulas.forEach(celula => celula.innerHTML = '');
+            jogador = 'X';
+            document.body.classList.add('cursorX');
+            document.body.classList.remove('cursorO');
+            jogadorAtual(jogador)
+            document.querySelector('#resultado').innerText = '';
+            document.querySelector('#resultado').classList.remove('vencedor')
+        }
+    </script>
+    
+</body>
+</html>

@@ -72,6 +72,10 @@
 .opções{
     position: absolute;
     background-color:rgb(31, 138, 205) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 4px;
     width: 200px;
     max-height:85vh;
@@ -93,7 +97,6 @@
 
 .opções a,.opções li > p{
     display: block;
-    padding: 1px 3px;
     overflow-x: hidden;
     text-overflow: ellipsis;
 }
@@ -127,10 +130,11 @@
 
     .opções{
         width: 18vw;
+        border-radius: 5px;
     }
 
     .opções a, .opções li > p{
-        font-size: 3.5vw;
-        padding:3px 0px;
+        font-size: 2.7vw;
+        padding:1px 0px;
     }
 }

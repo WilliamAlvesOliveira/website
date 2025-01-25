@@ -147,6 +147,47 @@
             border: 2px solid white
         }
 
+        @media(max-height:281px){
+            h1{
+                font-size: 14px;
+            }
+
+            .players>p{
+            font-size: 6px;
+            width: 80px;
+            height: 26px;
+            }
+
+            .velha{
+                width: 40vw;
+                height: 40vw;
+            }
+
+            td{
+                font-size: 7vw  ;
+            }
+
+            #resultado{
+                height: 12px;
+                margin-top: 1px;
+            }
+            
+            .vencedor{
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+            }
+
+            #resultado>p{
+                font-size: 8px;
+            }
+
+            footer>button{
+                font-size:6px;
+            }
+
+        }
+
+
 
     </style>
 </head>
@@ -245,10 +286,10 @@
     
                 if (vencedor) {
                     if (vencedor === 'velha'){
-                        resultado.innerText = 'VELHA!!!';
+                        resultado.innerHTML = '<p>VELHA!!!</p>';
                         resultado.classList.add('vencedor');
                     }else{
-                        resultado.innerText = `Vencedor: Jogador ${vencedor}`;
+                        resultado.innerHTML = `<p>Vencedor: Jogador ${vencedor}</p.`;
                         resultado.classList.add('vencedor');
                         return; 
                     } 

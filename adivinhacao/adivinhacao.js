@@ -53,6 +53,7 @@ function adivinhacao(){
 
         if (numero === computador){
             mensagem.style.color = 'red'
+            mensagem.style.textShadow = '1px 1px 0px rgba(0, 0, 0, 0.75)'
             mensagem.innerHTML = 'PARABÉNS! Você acertou.'
             min = 0
             max = 1000

@@ -86,6 +86,10 @@
     transition-delay: 0.2s;
 }
 
+.opções > li{
+    margin: 6px 0px;
+}
+
 .opções li > p{
     color: white;
     font-size: 20px;

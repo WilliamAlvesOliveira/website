@@ -95,6 +95,7 @@ button:hover{
     transform: translate(-2px, -2px);
 }
 
+
 @media(min-width:400px){
     body> div{
         gap: 15px;

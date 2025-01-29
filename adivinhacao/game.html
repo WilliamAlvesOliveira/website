@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhação</title>
+    <link rel="stylesheet" href="adivinhacaoCSS.css">
+</head>
+<body>
+    <div>
+        <header><h1>Adivinhe o Número</h1></header>
+
+        <main>
+            <label for="Palpite">Palpite:</label>
+            <input type="number" name="Palpite" id="Palpite" min="0" max="100">
+            <button onclick="adivinhacao()">Dar palpite</button>
+            <div>
+                <p id="resultado"> </p>
+            </div>
+        </main>
+
+        <footer>
+            <a href="adivinhação.html"><button>voltar</button></a>
+        </footer>
+    </div>
+
+    <script src="adivinhacao.js"> </script>
+</body>
+</html>

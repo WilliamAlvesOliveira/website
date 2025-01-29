@@ -1,5 +1,3 @@
-document.getElementById('Palpite').focus()
-
 function obtterdificuldade(nome){
     const urldificuldade = new URLSearchParams(window.location.search);
     return urldificuldade.get(nome);
@@ -72,5 +70,6 @@ function adivinhacao(){
 
         document.querySelector("#Palpite").placeholder = ` de ${min} até ${max}`
         document.getElementById('Palpite').value = ''
+        document.getElementById('Palpite').focus()
     }
 }

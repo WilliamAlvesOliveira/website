@@ -8,14 +8,34 @@
 </head>
 <body>
     <main>
-        <h1 id="titulo">Adivinhação</h1>
-        <p>Selecione a dificuldade</p>
-        <button onclick="Dificuldade('facil')" >Fácil</button>
-        <button onclick="Dificuldade('medio')">Médio</button>
-        <button onclick="Dificuldade('dificil')">Difícil</button>
+        <h1 id="titulo">Adivinhação <span id="version">2.0</span></h1>
+        <div class="opções">
+            <p>Selecione a dificuldade</p>
+            <button id="fácil" onclick="Dificuldade('facil')" >Fácil</button>
+            <button onclick="Dificuldade('medio')">Médio</button>
+            <button onclick="Dificuldade('dificil')">Difícil</button>
+        </div>
     </main>
     
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tituloOriginal = document.querySelector('#titulo');
+            const tituloTexto = tituloOriginal.innerText;
+            tituloOriginal.innerHTML = "";
+
+            for (let i = 0; i < tituloTexto.length; i++) {
+                const span = document.createElement("span");
+                span.innerText = tituloTexto[i];
+                span.classList.add('letter');
+                tituloOriginal.appendChild(span);
+
+                setTimeout(() => {
+                    span.style.opacity = 1;
+                }, i * 200);
+            }
+
+        });
+
         function Dificuldade(dificuldade){
             window.location.href = `game.html?dificuldade=${dificuldade}`;
         }

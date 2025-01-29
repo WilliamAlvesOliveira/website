@@ -4,7 +4,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    color: rgb(56,56,56);
+    color: rgb(66,66,66);
     
 }
 
@@ -27,19 +27,42 @@ main{
 main > h1{
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 1px rgb(36, 36, 36), -1px 1px 2px rgb(36, 36, 36), 1px -1px 1px white, -1px -1px 1px rgb(36, 36, 36) ;
     margin: 5px 3px;
 }
 
-main > button{
+.letter{
+    opacity: 0;
+    transition: opacity 00.5s;
+}
+
+.opções{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 3s;
+
+}
+
+.opções > button{
     width: 200px;
     border-radius: 1000px;
     font-size: 18px;
     background-image: linear-gradient(to bottom,#d8d8d8,#8f8f8f);
+    border-color: rgba(0, 0, 0, 0.4)
 }
 
-main > button:hover{
+.opções > button:hover{
+    border-color: black;
     transform: translate(-3px, -3px);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
 }
 
-
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missile Command</title>
+    <link rel="stylesheet" href="missilecommand.css">
+</head>
+<body>
+    <h1>Missile Command</h1>
+    <canvas id="gameCanvas" ></canvas>
+    <script>
+        let largura = window.innerWidth * 0.99; // 80% da largura da viewport
+        let proporcao = 7 / 5; // Proporção de 350 x 250
+        let tela = document.getElementById('gameCanvas');
+        tela.setAttribute('width', largura);
+    
+        let altura = largura / proporcao; // Altura de acordo com a proporção
+        tela.setAttribute('height', altura);
+    </script>
+    <script src="missilecommand.js"> </script>
+</body>
+</html>

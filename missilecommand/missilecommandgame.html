@@ -8,16 +8,18 @@
 </head>
 <body>
     <h1>Missile Command</h1>
-    <canvas id="gameCanvas" ></canvas>
+    <canvas id="gameCanvas"></canvas>
     <script>
-        let largura = window.innerWidth * 0.99; // 80% da largura da viewport
+        // Ajustar a largura do canvas para 99% da largura da viewport
+        let largura = window.innerWidth * 0.99;
         let proporcao = 7 / 5; // Proporção de 350 x 250
         let tela = document.getElementById('gameCanvas');
         tela.setAttribute('width', largura);
-    
-        let altura = largura / proporcao; // Altura de acordo com a proporção
+
+        // Ajustar a altura de acordo com a proporção
+        let altura = largura / proporcao;
         tela.setAttribute('height', altura);
     </script>
-    <script src="missilecommand.js"> </script>
+    <script src="missilecommand.js"></script>
 </body>
 </html>

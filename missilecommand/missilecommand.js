@@ -12,7 +12,7 @@ let highScore = localStorage.getItem('highScore') || 0;
 const enemyMissileProbability = 0.006;
 const initialSpeed = 0.1;
 const maxSpeed = 0.8;
-const expansionRate = 0.5;
+const expansionRate = 0.3;
 const playerMissileLifetime = 60;
 
 const estrelas = [
@@ -141,6 +141,7 @@ function drawEnemyMissiles() {
         missile.y += missile.dy;
 
         if (missile.y >= canvas.height || missile.x <= 0 || missile.x >= canvas.width) {
+            drawExplosion(missile.x, missile.y)
             enemyMissiles.splice(i, 1);
         }
 
@@ -158,30 +159,95 @@ function drawEnemyMissiles() {
     }
 }
 
+function launchPlayerMissile(event) {
+    const rect = canvas.getBoundingClientRect();
+    const targetX = event.clientX - rect.left;
+    const targetY = event.clientY - rect.top;
+
+    // Posição inicial do projétil (centro inferior da tela)
+    const startX = canvas.width / 2;
+    const startY = canvas.height;
+
+    // Calcular a velocidade do projétil para mover em direção ao ponto clicado
+    const speed = 15; // Aumentar a velocidade conforme necessário
+    const angle = Math.atan2(targetY - startY, targetX - startX);
+    const dx = speed * Math.cos(angle);
+    const dy = speed * Math.sin(angle);
+
+    // Adiciona o projétil
+    playerMissiles.push({
+        x: startX,
+        y: startY,
+        dx: dx,
+        dy: dy,
+        targetX: targetX,
+        targetY: targetY,
+        isProjectile: true // Marca como projétil inicial
+    });
+
+    console.log("Projétil lançado de:", startX, startY, "para:", targetX, targetY);
+}
+
 function drawPlayerMissiles() {
-    ctx.fillStyle = 'yellow';
     for (let i = playerMissiles.length - 1; i >= 0; i--) {
         let missile = playerMissiles[i];
-        missile.radius += expansionRate;
-        missile.timeLeft -= 1;
 
-        ctx.beginPath();
-        ctx.arc(missile.x, missile.y, missile.radius, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.closePath();
+        if (missile.isProjectile) {
+            // Atualizar a posição do projétil
+            missile.x += missile.dx;
+            missile.y += missile.dy;
 
-        if (missile.timeLeft <= 0) {
-            playerMissiles.splice(i, 1);
+            // Desenhar o projétil
+            ctx.fillStyle = 'rgb(75, 43, 106)'; // Cor do projétil inicial
+            ctx.beginPath();
+            ctx.arc(missile.x, missile.y, 5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+
+            // Verificar se o projétil atingiu o alvo
+            const dx = missile.x - missile.targetX;
+            const dy = missile.y - missile.targetY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 5) {
+                console.log("Projétil atingiu o alvo em:", missile.x, missile.y);
+                // Remove o projétil da lista
+                playerMissiles.splice(i, 1);
+
+                // Adiciona o míssil amarelo na posição do alvo
+                playerMissiles.push({
+                    x: missile.targetX,
+                    y: missile.targetY,
+                    radius: 5,
+                    timeLeft: playerMissileLifetime,
+                    isProjectile: false // Marca como míssil amarelo
+                });
+
+                console.log("Explosão gerada em:", missile.targetX, missile.targetY);
+            }
+        } else {
+            // Atualizar a explosão
+            missile.radius += expansionRate;
+            missile.timeLeft -= 1;
+
+            // Desenhar a explosão em amarelo
+            ctx.fillStyle = 'yellow';
+            ctx.beginPath();
+            ctx.arc(missile.x, missile.y, missile.radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+
+            // Remover o míssil da lista após a explosão
+            if (missile.timeLeft <= 0) {
+                playerMissiles.splice(i, 1);
+                console.log("Explosão terminou em:", missile.x, missile.y);
+            }
         }
     }
 }
 
-function launchPlayerMissile(event) {
-    const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    playerMissiles.push({ x: x, y: y, radius: 5, timeLeft: playerMissileLifetime });
-}
+
+
 
 function checkCollisions() {
     for (let i = playerMissiles.length - 1; i >= 0; i--) {
@@ -207,8 +273,8 @@ function checkCollisions() {
             const dx = missile.x - point.x;
             const dy = missile.y - point.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < 5) {
-                drawExplosion(point.x, point.y);
+            if (distance < 5.5) {
+                drawExplosion(missile.x, missile.y);
                 cityPoints.splice(j, 1);
                 enemyMissiles.splice(i, 1);
                 break;
@@ -246,7 +312,7 @@ function drawScore() {
 function drawExplosion(x, y) {
     ctx.fillStyle = 'orange';
     ctx.beginPath();
-    ctx.arc(x, y, 15, 0, Math.PI * 2);
+    ctx.arc(x, y, 20, 0, Math.PI * 2);
     ctx.fill();
     ctx.closePath();
 }

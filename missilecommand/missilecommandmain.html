@@ -11,8 +11,14 @@
 
     <h2>Dificuldade</h2>
 
-    <button>Fácil</button>
-    <button>Médio</button>
-    <button>Difícil</button>
+    <button onclick="dificuldade('facil')">Fácil</button>
+    <button onclick="dificuldade('medio')">Médio</button>
+    <button onclick="dificuldade('dificil')">Difícil</button>
+
+    <script>
+        function dificuldade(dificuldade){
+            window.location.href = `missilecommandgame.html?dificuldade=${dificuldade}`;
+        }
+    </script>
 </body>
 </html>

@@ -31,13 +31,13 @@ if(dificuldade === 'facil'){
 }else if(dificuldade === 'medio'){
     enemyMissileProbability = 0.010;
     playerMissileLifetime = 50;
-    initialSpeed = 0.4;
+    initialSpeed = 0.5;
     maxSpeed = 0.8;
     expansionRate = 0.15;
 }else if(dificuldade === 'dificil'){
     enemyMissileProbability = 0.015;
     playerMissileLifetime = 40;
-    initialSpeed = 0.5;
+    initialSpeed = 0.7;
     maxSpeed = 1.0;
     expansionRate = 0.09;
 }else{

@@ -11,7 +11,7 @@
         <h1 id="titulo">Adivinhação <span id="version">2.0</span></h1>
         <div class="opções">
             <p>Selecione a dificuldade</p>
-            <button id="fácil" onclick="Dificuldade('facil')" >Fácil</button>
+            <button onclick="Dificuldade('facil')" >Fácil</button>
             <button onclick="Dificuldade('medio')">Médio</button>
             <button onclick="Dificuldade('dificil')">Difícil</button>
         </div>
@@ -31,7 +31,7 @@
 
                 setTimeout(() => {
                     span.style.opacity = 1;
-                }, i * 200);
+                }, i * 150);
             }
 
         });

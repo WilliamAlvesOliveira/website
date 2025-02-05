@@ -1,19 +1,52 @@
+function obtterdificuldade(nome){
+    const urldificuldade = new URLSearchParams(window.location.search);
+    return urldificuldade.get(nome);
+}
+
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
+const dificuldade = obtterdificuldade('dificuldade')
+let highScoreKey = `highScore_${dificuldade}`;
+let highScore = localStorage.getItem(highScoreKey) || 0;
 
 // Variáveis do Jogo
 let cityPoints = generateCityPoints(10);
 const enemyMissiles = [];
 const playerMissiles = [];
 let missilesDestroyed = 0;
-let highScore = localStorage.getItem('highScore') || 0;
 
 // Configurações de dificuldade
-const enemyMissileProbability = 0.006;
-const initialSpeed = 0.1;
-const maxSpeed = 0.8;
-const expansionRate = 0.3;
-const playerMissileLifetime = 60;
+let enemyMissileProbability
+let playerMissileLifetime
+let initialSpeed
+let maxSpeed
+let expansionRate
+
+if(dificuldade === 'facil'){
+    enemyMissileProbability = 0.007;
+    playerMissileLifetime = 60;
+    initialSpeed = 0.3;
+    maxSpeed = 0.6;
+    expansionRate = 0.3;    
+}else if(dificuldade === 'medio'){
+    enemyMissileProbability = 0.010;
+    playerMissileLifetime = 50;
+    initialSpeed = 0.4;
+    maxSpeed = 0.8;
+    expansionRate = 0.15;
+}else if(dificuldade === 'dificil'){
+    enemyMissileProbability = 0.015;
+    playerMissileLifetime = 40;
+    initialSpeed = 0.5;
+    maxSpeed = 1.0;
+    expansionRate = 0.09;
+}else{
+    enemyMissileProbability = 0.010;
+    playerMissileLifetime = 50;
+    initialSpeed = 0.4;
+    maxSpeed = 0.8;
+    expansionRate = 0.15;
+}
 
 const estrelas = [
     // Virgem (Virgo)
@@ -197,6 +230,19 @@ function drawPlayerMissiles() {
             missile.x += missile.dx;
             missile.y += missile.dy;
 
+            // Verificar se o projétil passou do alvo e corrigi-lo
+            const dx = missile.x - missile.targetX;
+            const dy = missile.y - missile.targetY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if ((missile.dx > 0 && missile.x >= missile.targetX) ||
+                (missile.dx < 0 && missile.x <= missile.targetX) ||
+                (missile.dy > 0 && missile.y >= missile.targetY) ||
+                (missile.dy < 0 && missile.y <= missile.targetY)) {
+                missile.x = missile.targetX;
+                missile.y = missile.targetY;
+            }
+
             // Desenhar o projétil
             ctx.fillStyle = 'rgb(75, 43, 106)'; // Cor do projétil inicial
             ctx.beginPath();
@@ -205,11 +251,7 @@ function drawPlayerMissiles() {
             ctx.closePath();
 
             // Verificar se o projétil atingiu o alvo
-            const dx = missile.x - missile.targetX;
-            const dy = missile.y - missile.targetY;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < 5) {
+            if (distance < 5 || (missile.x === missile.targetX && missile.y === missile.targetY)) {
                 console.log("Projétil atingiu o alvo em:", missile.x, missile.y);
                 // Remove o projétil da lista
                 playerMissiles.splice(i, 1);
@@ -245,9 +287,6 @@ function drawPlayerMissiles() {
         }
     }
 }
-
-
-
 
 function checkCollisions() {
     for (let i = playerMissiles.length - 1; i >= 0; i--) {
@@ -285,10 +324,10 @@ function checkCollisions() {
 
 function checkGameOver() {
     if (cityPoints.length === 0) {
-        alert("Game Over! All cities have been destroyed.");
+        alert("Game Over! Todas as suas bases foram destruídas.");
         if (missilesDestroyed > highScore) {
             highScore = missilesDestroyed;
-            localStorage.setItem('highScore', highScore);
+            localStorage.setItem(highScoreKey, highScore);
             alert(`New High Score: ${highScore}`);
         }
         resetGame();

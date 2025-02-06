@@ -3,6 +3,9 @@ function obtterdificuldade(nome){
     return urldificuldade.get(nome);
 }
 
+let isPaused = false;
+document.getElementById('Pause').addEventListener('click',PauseGame);
+
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const dificuldade = obtterdificuldade('dificuldade')
@@ -95,6 +98,15 @@ const estrelas = [
     {x: 0.80, y: 0.302}
 
 ];
+
+function PauseGame(){
+    isPaused = !isPaused;
+    if (isPaused){
+        console.log('Jogo Pausado')
+    }else{
+        console.log('Jogo Retornado')
+    }
+}
 // Funções do Jogo
 
 function generateCityPoints(numPoints) {
@@ -193,6 +205,10 @@ function drawEnemyMissiles() {
 }
 
 function launchPlayerMissile(event) {
+    if(isPaused){
+        return;
+    }
+    
     const rect = canvas.getBoundingClientRect();
     const targetX = event.clientX - rect.left;
     const targetY = event.clientY - rect.top;
@@ -357,25 +373,26 @@ function drawExplosion(x, y) {
 }
 
 function gameLoop() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (!isPaused){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    drawStars();
-    drawGround(); // Desenhar o chão primeiro
-    drawCityPoints();
-    drawEnemyMissiles();
-    drawPlayerMissiles();
-    checkCollisions();
-    checkGameOver();
-    drawScore();
+        drawStars();
+        drawGround(); // Desenhar o chão primeiro
+        drawCityPoints();
+        drawEnemyMissiles();
+        drawPlayerMissiles();
+        checkCollisions();
+        checkGameOver();
+        drawScore();
 
-    if (Math.random() < enemyMissileProbability) {
-        addEnemyMissile();
+        if (Math.random() < enemyMissileProbability) {
+            addEnemyMissile();
+        }
     }
-
-    requestAnimationFrame(gameLoop);
+        requestAnimationFrame(gameLoop);
 }
 
 canvas.addEventListener('click', launchPlayerMissile);

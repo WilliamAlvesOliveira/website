@@ -9,6 +9,10 @@
 <body>
     <h1>Missile Command</h1>
     <canvas id="gameCanvas"></canvas>
+    <div class="options">
+        <button id="Pause">Pause</button>
+        <button onclick="voltar()">Menu</button>
+    </div>
     <script>
         // Ajustar a largura do canvas para 99% da largura da viewport
         let largura = window.innerWidth * 0.99;
@@ -19,6 +23,10 @@
         // Ajustar a altura de acordo com a proporção
         let altura = largura / proporcao;
         tela.setAttribute('height', altura);
+
+        function voltar(){
+            window.history.go(-1);
+        }
     </script>
     <script src="missilecommand.js"></script>
 </body>

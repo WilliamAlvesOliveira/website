@@ -130,14 +130,6 @@
             transition: background-color 0.05s ease, border-top 0.05s ease, border-bottom 0.05s ease, outline 0.05s ease;
         }
 
-        .cursorX {
-            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgMUwxOSAxOU0xOSAxTDEgMTkiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4='), pointer;
-        }
-
-        .cursorO {
-            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg=='), pointer;
-        }
-
         footer > button{
             cursor: pointer;
             background-color: var(--cor4);
@@ -253,11 +245,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', iniciar);
         let jogador = 'X';
-    
+
         function jogadorAtual(jogador){
             const jogadorX = document.querySelector('#playerX');
             const jogadorO = document.querySelector('#playerO');
-    
+
             if (jogador === 'X'){
                 jogadorX.classList.add('jogadorAtual');
                 jogadorO.classList.remove('jogadorAtual');
@@ -266,7 +258,7 @@
                 jogadorO.classList.add('jogadorAtual');
             }
         }
-    
+
         function iniciar() {
             const celulas = document.querySelectorAll('.velha td');
             celulas.forEach(celula => {
@@ -277,37 +269,38 @@
                         marcar(celula);
                     }
                 });
+                celula.addEventListener('mouseover', () => mostrarPreview(celula));
+                celula.addEventListener('mouseout', () => removerPreview(celula));
             });
-    
+
             document.querySelector('#reiniciar').addEventListener('click', reiniciar);
             reiniciar();
         }
-    
+
         function marcar(celula) {
-            if (celula.innerHTML === '') {
+            if (celula.innerHTML === '' || celula.classList.contains('preview')) {
                 celula.innerHTML = jogador;
-    
+                celula.classList.remove('preview');
+
                 const vencedor = verificarVencedor();
                 const resultado = document.querySelector('#resultado');
-    
+
                 if (vencedor) {
                     if (vencedor === 'velha'){
                         resultado.innerHTML = '<p>VELHA!!!</p>';
                         resultado.classList.add('vencedor');
-                    }else{
-                        resultado.innerHTML = `<p>Vencedor: Jogador ${vencedor}</p.`;
+                    } else {
+                        resultado.innerHTML = `<p>Vencedor: Jogador ${vencedor}</p>`;
                         resultado.classList.add('vencedor');
                         return; 
                     } 
                 }
-    
+
                 jogador = jogador === 'X' ? 'O' : 'X';
-                document.body.classList.toggle('cursorX');
-                document.body.classList.toggle('cursorO');
-                jogadorAtual(jogador)
+                jogadorAtual(jogador);
             }
         }
-    
+
         function verificarVencedor() {
             const celulas = document.querySelectorAll('.velha td');
             const combinacoes = [
@@ -315,32 +308,45 @@
                 [0, 3, 6], [1, 4, 7], [2, 5, 8],
                 [0, 4, 8], [2, 4, 6]
             ];
-    
+
             for (const combinacao of combinacoes) {
                 const [a, b, c] = combinacao;
                 if (celulas[a].innerHTML && celulas[a].innerHTML === celulas[b].innerHTML && celulas[a].innerHTML === celulas[c].innerHTML) {
                     return celulas[a].innerHTML;
                 }
             }
-    
+
             const todosPreenchidos = [...celulas].every(celula => celula.innerHTML !== '');
             if (todosPreenchidos) {
                 return 'velha';
             }
-    
+
             return null;
         }
-    
+
         function reiniciar() {
             const celulas = document.querySelectorAll('.velha td');
             celulas.forEach(celula => celula.innerHTML = '');
             jogador = 'X';
-            document.body.classList.add('cursorX');
-            document.body.classList.remove('cursorO');
-            jogadorAtual(jogador)
+            jogadorAtual(jogador);
             document.querySelector('#resultado').innerText = '';
-            document.querySelector('#resultado').classList.remove('vencedor')
+            document.querySelector('#resultado').classList.remove('vencedor');
         }
+
+        function mostrarPreview(celula) {
+            if (celula.innerHTML === '') {
+                celula.innerHTML = jogador;
+                celula.classList.add('preview');
+            }
+        }
+
+        function removerPreview(celula) {
+            if (celula.classList.contains('preview')) {
+                celula.innerHTML = '';
+                celula.classList.remove('preview');
+            }
+        }
+
     </script>
     
 </body>

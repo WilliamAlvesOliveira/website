@@ -57,15 +57,21 @@ function adivinhacao(){
             mensagem.innerHTML = 'PARABÉNS! Você acertou.'
             min = 0
             max = 1000
-        }else if (dificuldade !== 'dificil' && computador > numero){
+
+        }else if (computador > numero){
             mensagem.innerHTML = 'Você errou! Meu número é <strong>maior</strong>.'
-            if (min < numero){
-                min = numero
+            if (dificuldade !== 'dificil'){
+                if (min < numero){
+                    min = numero
+                }
             }
-        } else if (dificuldade !== 'dificil' && computador < numero){
+
+        } else if (computador < numero){
             mensagem.innerHTML = 'Você errou! Meu número é <strong>menor</strong>.'
-            if (max > numero){
-                max = numero
+            if(dificuldade !== 'dificil'){
+                if (max > numero){
+                    max = numero
+                }
             }
         }
 

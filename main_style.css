@@ -366,11 +366,22 @@ picture img{
 }
 
 @media(max-width:320px){
+    .artigos{
+        font-size: 6vw;
+    }
     .matérias h2{
-        font-size: 1.7em;
+        font-size: 10vw;
     }
 
     .matérias h3{
-        font-size: 1.2em;
+        font-size:8vw;
+    }
+
+    .matérias p{
+        font-size: 6vw;
+    }
+
+    .noticias p{
+        font-size: 6vw;
     }
 }
